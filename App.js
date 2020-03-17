@@ -18,88 +18,63 @@ import {
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <View style={styles.container}>
+      <View style={styles.groupA}>
+        <View style={{...styles.groupAChild, backgroundColor: '#fe2200'}}>
+          <Text style={{fontSize: 20}}>A</Text>
+        </View>
+        <View style={{...styles.groupAChild, backgroundColor: '#359b2d'}}>
+          <Text style={{fontSize: 20}}>B</Text>
+        </View>
+        <View style={{...styles.groupAChild, backgroundColor: '#7f9e12'}}>
+          <Text style={{fontSize: 20}}>C</Text>
+        </View>
+        <View style={{...styles.groupAChild, backgroundColor: '#4149ec'}}>
+          <Text style={{fontSize: 20}}>D</Text>
+        </View>
+      </View>
+      <View style={styles.groupB}>
+        <View style={{...styles.groupBChild, backgroundColor: '#d2ca65'}}>
+          <Text style={{fontSize: 20}}>A</Text>
+        </View>
+        <View style={{...styles.groupBChild, backgroundColor: '#829079'}}>
+          <Text style={{fontSize: 20}}>B</Text>
+        </View>
+        <View style={{...styles.groupBChild, backgroundColor: '#8228be'}}>
+          <Text style={{fontSize: 20}}>C</Text>
+        </View>
+        <View style={{...styles.groupBChild, backgroundColor: '#5d1442'}}>
+          <Text style={{fontSize: 20}}>D</Text>
+        </View>
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    flexDirection: 'column',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  groupA: {
+    flex: 1,
+    flexDirection: 'column',
   },
-  body: {
-    backgroundColor: Colors.white,
+  groupAChild: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '25%',
+    fontSize: 64,
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  groupB: {
+    flex: 1,
+    flexDirection: 'row',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+  groupBChild: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '25%',
+    fontSize: 64,
   },
 });
 
